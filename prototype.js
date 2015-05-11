@@ -135,3 +135,24 @@ Human.prototype.speak = function()
 }
 console.log(typeof poti.speak);
 console.log(typeof tanaka.speak);
+
+
+
+
+console.log('==============================================================')
+console.log('==============================================================')
+console.log('==============================================================')
+
+// すべてのクラスはObjectクラスのprototypeを持っている
+Object.prototype.printHoge = function()
+{
+  console.log('hello hoge');
+}
+Object.printFuga = function()
+{
+  console.log('hello fuga');
+}
+var Hoge = function(){};
+var hoge = new Hoge();
+console.log(hoge.printHoge);
+console.log(hoge.printFuga);
