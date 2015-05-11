@@ -55,6 +55,7 @@ var hoge = new Hoge();
 
 // 引数に無名関数を受けて
 // 実行するサンプル
+// ajaxの中ってこんなかんじなのかな？というサンプル
 function hogejax(option)
 {
   var data = [
