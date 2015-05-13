@@ -1,4 +1,3 @@
-// thisを偽造してのmethodよびだし
 var Hoge = function()
 {
   this.member = 'Hoge',
@@ -10,6 +9,7 @@ var Hoge = function()
 // 何かに所属している時のthisなので Hoge と表示
 var hoge = new Hoge();
 hoge.print();
+
 
 // thisをすり替えての実行
 var context = {member: 'Override'};
