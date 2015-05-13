@@ -156,3 +156,46 @@ var Hoge = function(){};
 var hoge = new Hoge();
 console.log(hoge.printHoge);
 console.log(hoge.printFuga);
+
+
+
+
+
+
+
+
+console.log('==============================================================')
+console.log('==============================================================')
+console.log('==============================================================')
+
+// prototypeの載せ替え
+// 亀のprototypeを持っているミドリガメをうさぎに変身させる
+//
+// prototypeの載せ替えは__proto__を上書きする必要がある
+// ↓これではダメ
+// greenTurtle.prototype = Rabbit.prototype;
+// __proto__ には prototype のアドレスが格納されている。prototype は __proto__ のアドレスを参照し、プロトタイプチェーンが実現している。
+// http://www.sirochro.com/note/js-prototype-and-proto/
+function Turtle(){};
+function Rabbit(){};
+Turtle.prototype.run = function()
+{
+  console.log('slow...');
+};
+Rabbit.prototype.run = function()
+{
+  console.log('fast!!');
+};
+
+var greenTurtle = new Turtle();
+
+console.log('変身前');
+greenTurtle.run();
+console.log('Object.getPrototypeOf(greenTurtle) === Turtle.prototype:' + (Object.getPrototypeOf(greenTurtle) === Turtle.prototype));
+console.log('Object.getPrototypeOf(greenTurtle) === Turtle.prototype:' + (Object.getPrototypeOf(greenTurtle) === Rabbit.prototype));
+
+greenTurtle.__proto__ = Rabbit.prototype;
+console.log('変身前後');
+greenTurtle.run();
+console.log('Object.getPrototypeOf(greenTurtle) === Turtle.prototype:' + (Object.getPrototypeOf(greenTurtle) === Turtle.prototype));
+console.log('Object.getPrototypeOf(greenTurtle) === Turtle.prototype:' + (Object.getPrototypeOf(greenTurtle) === Rabbit.prototype));
