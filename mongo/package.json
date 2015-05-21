@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mongoose": "^4.0.3",
+    "bluebird": "^2.9.25"
+  }
+}
